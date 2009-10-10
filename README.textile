@@ -12,8 +12,8 @@ include IMPAwards
 <pre>
 <code>IMPAwards.search_posters("The Dark Knight").first</code>
 => {:xlg=>"http://www.impawards.com/2008/posters/dark_knight_xlg.jpg", 
-		:thumb=>"http://www.impawards.com/2008/posters/dark_knight.jpg", 
-		:tiny=>"http://www.impawards.com/2008/thumbs/imp_dark_knight.jpg"}
+    :thumb=>"http://www.impawards.com/2008/posters/dark_knight.jpg", 
+    :tiny=>"http://www.impawards.com/2008/thumbs/imp_dark_knight.jpg"}
 </pre>
 
 h2. Installation
