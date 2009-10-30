@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{impawards}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jon Maddox"]
-  s.date = %q{2009-10-09}
+  s.date = %q{2009-10-30}
   s.description = %q{Simple library to find high quality posters for movies}
   s.email = %q{jon@mustacheinc.com}
   s.extra_rdoc_files = [
@@ -22,6 +22,8 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.textile",
      "Rakefile",
+     "VERSION",
+     "impawards.gemspec",
      "lib/impawards.rb",
      "test/impawards_test.rb",
      "test/test_helper.rb"
