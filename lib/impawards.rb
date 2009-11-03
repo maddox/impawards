@@ -19,7 +19,7 @@ module IMPAwards
 
     def self.get_posters(query)
       movie_urls = get_movie_results(query)
-      movie_urls.delete_if{|movie_url| movie_url.inner_text !~ /#{query}/i}
+      movie_urls.delete_if{|movie_url| movie_url.inner_text !~ /^#{query} Poster -/i}
       if movie_urls.size > 0
         posters_for_url(movie_urls.first['href'])
       else

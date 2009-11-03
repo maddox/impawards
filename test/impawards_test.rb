@@ -93,6 +93,21 @@ class ImpawardsTest < Test::Unit::TestCase
         end
 
       end
+
+      context "with results that kinda match the query" do
+        setup do
+          @results = IMPAwards::IMPAwards.get_posters("warrior")
+        end
+        
+        should "return an array" do
+          assert_equal Array, @results.class
+        end
+
+        should "return an empty array" do
+          assert @results.empty?
+        end
+
+      end
       
 
     end
