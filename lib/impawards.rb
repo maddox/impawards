@@ -19,7 +19,7 @@ module IMPAwards
 
     def self.get_posters(query)
       movie_urls = get_movie_results(query)
-      movie_urls.delete_if{|movie_url| movie_url.inner_text !~ /^#{query} Poster -/i}
+      movie_urls.delete_if{|movie_url| movie_url.inner_text !~ /^#{query} Movie Poster -/i}
       if movie_urls.size > 0
         posters_for_url(movie_urls.first['href'])
       else
@@ -45,9 +45,9 @@ module IMPAwards
     private
     
     def self.get_movie_results(query)
-      results_url = "http://www.google.com/cse?cx=partner-pub-6811780361519631%3A48v46vdqqnk&cof=FORID%3A9&ie=ISO-8859-1&q=#{CGI.escape(query)}&sa=Search&ad=w9&num=10&rurl=http%3A%2F%2Fwww.impawards.com%2Fgooglesearch.html%3Fcx%3Dpartner-pub-6811780361519631%253A48v46vdqqnk%26cof%3DFORID%253A9%26ie%3DISO-8859-1%26q%3Doverboard%2B1987%26sa%3DSearch"
+      results_url = "http://www.google.com/cse?cx=partner-pub-6811780361519631%3A48v46vdqqnk&cof=FORID%3A9&ie=ISO-8859-1&q=#{CGI.escape('The Dark Knight')}&sa=Search&ad=w9&num=10&rurl=http%3A%2F%2Fwww.impawards.com%2Fgooglesearch.html%3Fcx%3Dpartner-pub-6811780361519631%253A48v46vdqqnk%26cof%3DFORID%253A9%26ie%3DISO-8859-1%26q%3Doverboard%2B1987%26sa%3DSearch"
       doc = Hpricot open(results_url)
-      movie_urls = (doc/"div.g h2.r a")
+      movie_urls = (doc/"div.g a")
       movie_urls.delete_if{|movie_url| movie_url.inner_text !~ /Poster - Internet/i}
     end
     
