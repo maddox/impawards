@@ -96,7 +96,7 @@ class ImpawardsTest < Test::Unit::TestCase
 
       context "with results that kinda match the query" do
         setup do
-          @results = IMPAwards::IMPAwards.get_posters("warrior")
+          @results = IMPAwards::IMPAwards.get_posters("fighter")
         end
         
         should "return an array" do
